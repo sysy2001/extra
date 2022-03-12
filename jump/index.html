@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> JUMP </title>
+    </head>
+    <style>
+        #button{
+            cursor: pointer;
+            background-color: gray;
+        }
+    </style>
+
+    <body>
+        <div>
+            <form style="text-align: center">
+                <input type="text" value="abc" id="left">
+                <input type="text" value="JUMP >" id="button" onclick="jump()">
+                <input type="text" value="" id="right">
+                
+            </form>
+        </div>
+
+        <script lang="javascript">
+            function jump(){
+                var l_btn = document.getElementById('left');
+                var btn = document.getElementById('button');
+                var r_btn = document.getElementById('right');
+                if (btn.value == "JUMP >") {
+                    r_btn.value = l_btn.value;
+                    l_btn.value = "";
+                    btn.value = "JUMP <"
+                } else {
+                    l_btn.value = r_btn.value;
+                    r_btn.value = "";
+                    btn.value = "JUMP >"
+                }
+            }
+
+        </script>
+
+       
+    </body>
+</html>
