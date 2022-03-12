@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> CHECK/UNCHECK </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <input type="checkbox" name="check-all" id="check-all" /> <span name="(un)check">Check All</span>
+        <br>
+        <br>
+        <input type="checkbox" name="first" class="box" /> first <br>
+        <input type="checkbox" name="second" class="box" /> second <br>
+        <input type="checkbox" name="third" class="box" /> third <br>
+        <input type="checkbox" name="fourth" class="box" /> fourth <br>
+      <script>
+        $(document).ready(function() {
+            $('#check-all').click(function() {  
+                if(this.checked) { 
+                    $('.box').each(function() { 
+                        this.checked = true;    
+                    });
+                    $("span[name='(un)check']").html("Uncheck All");
+                }else{
+                    $('.box').each(function() {
+                        this.checked = false; 
+                    }); 
+                    $("span[name='(un)check']").html("Check All");
+                }
+            });
+        });
+      </script>
+     </body>
+</html>
